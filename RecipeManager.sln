@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeManager", "RecipeManager\RecipeManager.csproj", "{F3ABBB76-0600-456C-AC4F-7FAD0B6B5477}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeManager.Tests", "RecipeManager.Tests\RecipeManager.Tests.csproj", "{0973EB36-46E9-427D-AB5B-783A47E0F0F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3ABBB76-0600-456C-AC4F-7FAD0B6B5477}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3ABBB76-0600-456C-AC4F-7FAD0B6B5477}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3ABBB76-0600-456C-AC4F-7FAD0B6B5477}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3ABBB76-0600-456C-AC4F-7FAD0B6B5477}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0973EB36-46E9-427D-AB5B-783A47E0F0F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0973EB36-46E9-427D-AB5B-783A47E0F0F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0973EB36-46E9-427D-AB5B-783A47E0F0F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0973EB36-46E9-427D-AB5B-783A47E0F0F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA20B1D3-EB70-4979-BC20-292E41ACE1EF}
+	EndGlobalSection
+EndGlobal
