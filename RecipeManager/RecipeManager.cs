@@ -1,67 +1,35 @@
-﻿namespace RecipeManager
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace RecipeManager
 {
     public class RecipeManager
     {
         private readonly List<Recipe> _recipes = new List<Recipe>();
 
-        public List<Recipe> Recipes
+        public List<Recipe> Recipes => _recipes;
+
+        public void AddRecipe(Recipe recipe)
         {
-            get { return _recipes; }
+            if (_recipes.Any(r => r.Title == recipe.Title && r.Chef == recipe.Chef && r.CuisineType == recipe.CuisineType))
+            {
+                throw new ArgumentException("Recipe already exists.");
+            }
+
+            _recipes.Add(recipe);
         }
 
-        public void AddRecipe(string title, string chef, CuisineType cuisineType)
+        public void RemoveRecipe(Recipe recipe)
         {
-            if (string.IsNullOrWhiteSpace(title))
-            {
-                throw new ArgumentException("Title cannot be null or whitespace.");
-            }
-
-            if (string.IsNullOrWhiteSpace(chef))
-            {
-                throw new ArgumentException("Chef cannot be null or whitespace.");
-            }
-
-            if (cuisineType == CuisineType.Unknown)
-            {
-                throw new ArgumentException("Cuisine type cannot be unknown.");
-            }
-
-            _recipes.Add(new Recipe(title, chef, cuisineType));
-        }
-
-        public void RemoveRecipe(string title, string chef, CuisineType cuisineType)
-        {
-            var recipe = _recipes.FirstOrDefault(r => r.Title == title && r.Chef == chef && r.CuisineType == cuisineType);
-
-            if (recipe == null)
+            if (!_recipes.Contains(recipe))
             {
                 throw new ArgumentException("Recipe not found.");
             }
 
             _recipes.Remove(recipe);
         }
-    }
 
-    public enum CuisineType
-    {
-        Unknown,
-        Italian,
-        Mexican,
-        Asian,
-        American
-    }
-
-    public class Recipe
-    {
-        public Recipe(string title, string chef, CuisineType cuisineType)
-        {
-            Title = title;
-            Chef = chef;
-            CuisineType = cuisineType;
-        }
-
-        public string Title { get; }
-        public string Chef { get; }
-        public CuisineType CuisineType { get; }
+        // Інші методи для роботи з колекцією рецептів
     }
 }

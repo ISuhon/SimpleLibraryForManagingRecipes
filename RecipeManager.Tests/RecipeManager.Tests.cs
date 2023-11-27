@@ -1,60 +1,90 @@
+
 namespace RecipeManager.Tests
 {
-    public class RecipeManagerTests
+    public class RecipeTests
     {
         [Fact]
-        public void AddingRecipeWithValidDataSucceeds()
+        public void Recipe_WithValidData_IsCreated()
         {
+            // Arrange
+            string title = "Pasta Carbonara";
+            string chef = "Gordon Ramsay";
+            CuisineType cuisineType = CuisineType.Italian;
+
+            // Act
+            var recipe = new Recipe(title, chef, cuisineType);
+
+            // Assert
+            Assert.Equal(title, recipe.Title);
+            Assert.Equal(chef, recipe.Chef);
+            Assert.Equal(cuisineType, recipe.CuisineType);
+        }
+
+        [Theory]
+        [InlineData("", "Gordon Ramsay", CuisineType.Italian)]
+        [InlineData("Pasta Carbonara", "", CuisineType.Italian)]
+        [InlineData("Pasta Carbonara", "Gordon Ramsay", CuisineType.Unknown)]
+        public void Recipe_WithInvalidData_ThrowsArgumentException(string title, string chef, CuisineType cuisineType)
+        {
+            // Assert
+            Assert.Throws<ArgumentException>(() => new Recipe(title, chef, cuisineType));
+        }
+
+
+        [Fact]
+        public void RecipeManager_AddRecipe_AddsToCollection()
+        {
+            // Arrange
             var recipeManager = new RecipeManager();
+            var recipe = new Recipe("Pasta Carbonara", "Gordon Ramsay", CuisineType.Italian);
 
-            recipeManager.AddRecipe("Title", "Chef", CuisineType.Italian);
+            // Act
+            recipeManager.AddRecipe(recipe);
 
-            Assert.Single(recipeManager.Recipes);
+            // Assert
+            Assert.Contains(recipe, recipeManager.Recipes);
         }
 
         [Fact]
-        public void AddingRecipeWithInvalidTitleFails()
+        public void RecipeManager_AddRecipe_ThrowsArgumentExceptionForDuplicate()
         {
+            // Arrange
             var recipeManager = new RecipeManager();
+            var recipe1 = new Recipe("Pasta Carbonara", "Gordon Ramsay", CuisineType.Italian);
+            var recipe2 = new Recipe("Pasta Carbonara", "Gordon Ramsay", CuisineType.Italian);
 
-            try
-            {
-                recipeManager.AddRecipe("", "Chef", CuisineType.Italian);
-            }
-            catch (ArgumentException ex)
-            {
-                Assert.Equal("Title cannot be null or whitespace.", ex.Message);
-            }
+            // Act
+            recipeManager.AddRecipe(recipe1);
+
+            // Assert
+            Assert.Throws<ArgumentException>(() => recipeManager.AddRecipe(recipe2));
         }
 
         [Fact]
-        public void RemovingExistingRecipeSucceeds()
+        public void RecipeManager_RemoveRecipe_RemovesFromCollection()
         {
+            // Arrange
             var recipeManager = new RecipeManager();
+            var recipe = new Recipe("Pasta Carbonara", "Gordon Ramsay", CuisineType.Italian);
+            recipeManager.AddRecipe(recipe);
 
-            recipeManager.AddRecipe("Title", "Chef", CuisineType.Italian);
+            // Act
+            recipeManager.RemoveRecipe(recipe);
 
-            recipeManager.RemoveRecipe("Title", "Chef", CuisineType.Italian);
-
-            Assert.Empty(recipeManager.Recipes);
+            // Assert
+            Assert.DoesNotContain(recipe, recipeManager.Recipes);
         }
 
         [Fact]
-        public void RemovingNonExistingRecipeFails()
+        public void RecipeManager_RemoveRecipe_ThrowsArgumentExceptionForNonExistentRecipe()
         {
+            // Arrange
             var recipeManager = new RecipeManager();
+            var recipe = new Recipe("Pasta Carbonara", "Gordon Ramsay", CuisineType.Italian);
 
-            try
-            {
-                recipeManager.RemoveRecipe("Title", "Chef", CuisineType.Italian);
-            }
-            catch (ArgumentException ex)
-            {
-                Assert.Equal("Recipe not found.", ex.Message);
-            }
+            // Act & Assert
+            Assert.Throws<ArgumentException>(() => recipeManager.RemoveRecipe(recipe));
         }
-
-
     }
-
 }
+
