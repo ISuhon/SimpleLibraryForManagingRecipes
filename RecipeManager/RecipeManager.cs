@@ -29,7 +29,14 @@ namespace RecipeManager
 
             _recipes.Remove(recipe);
         }
-
-        // Інші методи для роботи з колекцією рецептів
+        public List<Recipe> GetFavoritesSortedByTitleDescending()
+        {
+            return _recipes
+                .OrderByDescending(recipe => recipe.Title)
+                .ToList();
+        }
+        
     }
 }
+    
+
