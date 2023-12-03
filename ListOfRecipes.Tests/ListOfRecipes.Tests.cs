@@ -40,5 +40,24 @@ namespace ListOfRecipes.Tests
             // Act and assert
             Assert.Throws<ArgumentNullException>(() => new ListOfRecipes<Recipe>(listOfRecipes));
         }
+
+        [Fact]
+        public void ConstructorListOfRecipes_UsingNotUniqueCorrectValues_ListOfRecipesCreated()
+        {
+            // Arrange
+            List<Recipe> listOfRecipes = new List<Recipe>();
+
+            var firstRecipe = new Recipe("Risotto", "Gordon Ramsay", CuisineType.Italian);
+            var secondRecipe = new Recipe("Pizza", "Matty Matheson", CuisineType.Italian);
+            var fourthRecipe = new Recipe("Chilaquiles", "Vikas Khanna", CuisineType.Mexican);
+
+            listOfRecipes.Add(firstRecipe);
+            listOfRecipes.Add(secondRecipe);
+            listOfRecipes.Add(secondRecipe);
+            listOfRecipes.Add(fourthRecipe);
+
+            // Act and assert
+            Assert.Throws<ArgumentException>(() => new ListOfRecipes<Recipe>(listOfRecipes));
+        }
     }
 }
