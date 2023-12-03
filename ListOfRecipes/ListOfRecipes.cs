@@ -46,6 +46,9 @@ namespace ListOfRecipes
             return sortedList;
         }
 
-        //public T getElementByIndex
+        public List<T> GetList()
+        {
+            return this._recipes;
+        }
     }
 }
