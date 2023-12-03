@@ -92,5 +92,39 @@ namespace ListOfRecipes.Tests
             Assert.Equal(sortedListOfRecipes[2], sut.GetSortedList()[2]);
             Assert.Equal(sortedListOfRecipes[3], sut.GetSortedList()[3]);
         }
+
+        [Fact]
+        public void SortingWthFilters_UsingNullValues_ThrowsException()
+        {
+            // Arrange
+            // Arrange
+            List<Recipe> listOfRecipes = new List<Recipe>();
+
+            var firstRecipe = new Recipe("Risotto", "Gordon Ramsay", CuisineType.Italian);
+            var secondRecipe = new Recipe("Gnocchi", "Matty Matheson", CuisineType.Italian);
+            var thirdRecipe = new Recipe("Pasta", "Giada De Laurentiis", CuisineType.Italian);
+            var fourthRecipe = new Recipe("Chilaquiles", "Vikas Khanna", CuisineType.Mexican);
+
+            listOfRecipes.Add(firstRecipe);
+            listOfRecipes.Add(secondRecipe);
+            listOfRecipes.Add(thirdRecipe);
+            listOfRecipes.Add(fourthRecipe);
+
+            // Act
+            var sut = new ListOfRecipes.ListOfRecipes<Recipe>(listOfRecipes);
+
+            // Act and assert
+            Assert.Throws<ArgumentNullException>(() => sut.GetSortedList(null));
+        }
+
+        [Fact]
+        public void SortingWthFilters_UsingCorrectValues_SortedListOfRecipesCreated()
+        {
+            // Arrange
+            List<Recipe>? listOfRecipes = null;
+
+            // Act and assert
+            Assert.Throws<ArgumentNullException>(() => new ListOfRecipes<Recipe>(listOfRecipes));
+        }
     }
 }
