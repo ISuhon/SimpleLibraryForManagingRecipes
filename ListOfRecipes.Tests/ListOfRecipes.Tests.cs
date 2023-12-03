@@ -59,5 +59,38 @@ namespace ListOfRecipes.Tests
             // Act and assert
             Assert.Throws<ArgumentException>(() => new ListOfRecipes<Recipe>(listOfRecipes));
         }
+
+        [Fact]
+        public void DefaultSorting_UsingCorrectValues_SortedListOfRecipesReturned()
+        {
+            // Arrange
+            List<Recipe> listOfRecipes = new List<Recipe>();
+            List<Recipe> sortedListOfRecipes = new List<Recipe>();
+
+            var firstRecipe = new Recipe("Risotto", "Gordon Ramsay", CuisineType.Italian);
+            var secondRecipe = new Recipe("Gnocchi", "Matty Matheson", CuisineType.Italian);
+            var thirdRecipe = new Recipe("Pasta", "Giada De Laurentiis", CuisineType.Italian);
+            var fourthRecipe = new Recipe("Chilaquiles", "Vikas Khanna", CuisineType.Mexican);
+
+            listOfRecipes.Add(firstRecipe);
+            listOfRecipes.Add(secondRecipe);
+            listOfRecipes.Add(thirdRecipe);
+            listOfRecipes.Add(fourthRecipe);
+
+            sortedListOfRecipes.Add(firstRecipe);
+            sortedListOfRecipes.Add(thirdRecipe);
+            sortedListOfRecipes.Add(secondRecipe);
+            sortedListOfRecipes.Add(fourthRecipe);
+
+            // Act
+            var sut = new ListOfRecipes.ListOfRecipes<Recipe>(listOfRecipes);
+            
+
+            // Assert
+            Assert.Equal(sortedListOfRecipes[0], sut.GetSortedList()[0]);
+            Assert.Equal(sortedListOfRecipes[1], sut.GetSortedList()[1]);
+            Assert.Equal(sortedListOfRecipes[2], sut.GetSortedList()[2]);
+            Assert.Equal(sortedListOfRecipes[3], sut.GetSortedList()[3]);
+        }
     }
 }
