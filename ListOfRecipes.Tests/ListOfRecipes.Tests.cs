@@ -30,5 +30,15 @@ namespace ListOfRecipes.Tests
             Assert.Equal(thirdRecipe, sut.GetList()[2]);
             Assert.Equal(fourthRecipe, sut.GetList()[3]);
         }
+
+        [Fact]
+        public void ConstructorListOfRecipes_UsingNullValue_ThrowingException()
+        {
+            // Arrange
+            List<Recipe>? listOfRecipes = null;
+
+            // Act and assert
+            Assert.Throws<ArgumentNullException>(() => new ListOfRecipes<Recipe>(listOfRecipes));
+        }
     }
 }
