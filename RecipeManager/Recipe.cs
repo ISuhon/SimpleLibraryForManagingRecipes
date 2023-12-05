@@ -1,6 +1,6 @@
 ﻿namespace RecipeManager
 {
-    public class Recipe
+    public class Recipe : IRecipe
     {
         public Recipe(string title, string chef, CuisineType cuisineType)
         {

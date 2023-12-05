@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ListOfRecipes
 {
-    public interface IFilter<T> where T : Recipe
+    public interface IFilter<T> where T : IRecipe
     {
         public List<T> Filter(List<T> Recipes);
     }

@@ -2,7 +2,7 @@
 
 namespace ListOfRecipes
 {
-    public class ListOfRecipes<T> where T : Recipe
+    public class ListOfRecipes<T> where T : IRecipe
     {
         // Constructor which create list of recipes with sorting by descending order by the title of a recipe (default sorting)
         public ListOfRecipes(List<T> listOfRecipes) 
