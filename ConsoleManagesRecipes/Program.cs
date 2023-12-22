@@ -38,6 +38,3 @@ foreach (var recipe in recipeManager.Recipes)
 {
     Console.WriteLine($"Title: {recipe.Title} | Chef: {recipe.Chef} | Cuisine: {recipe.CuisineType}");
 }
-
-
-Console.ReadKey();
