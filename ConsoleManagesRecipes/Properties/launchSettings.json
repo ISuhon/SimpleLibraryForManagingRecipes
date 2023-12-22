@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ConsoleManagesRecipes": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
