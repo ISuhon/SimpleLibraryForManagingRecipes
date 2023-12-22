@@ -1,4 +1,4 @@
-﻿namespace RecipeManager
+﻿namespace RecipeManagerLogic
 {
     public enum CuisineType
     {

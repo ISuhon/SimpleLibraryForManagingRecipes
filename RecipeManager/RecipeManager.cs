@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace RecipeManager
+namespace RecipeManagerLogic
 {
     public class RecipeManager
     {

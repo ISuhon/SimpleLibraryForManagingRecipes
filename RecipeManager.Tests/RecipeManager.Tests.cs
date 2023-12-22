@@ -1,5 +1,5 @@
 
-namespace RecipeManager.Tests
+namespace RecipeManagerLogic.Tests
 {
     public class RecipeTests
     {

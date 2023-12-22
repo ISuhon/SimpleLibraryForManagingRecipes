@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace RecipeManager.Tests
+namespace RecipeManagerLogic.Tests
 {
     public class RecipeManagerTests
     {

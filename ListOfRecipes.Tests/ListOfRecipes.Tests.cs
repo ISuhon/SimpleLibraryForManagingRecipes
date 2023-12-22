@@ -1,5 +1,5 @@
 using ListOfRecipes;
-using RecipeManager;
+using RecipeManagerLogic;
 
 namespace ListOfRecipes.Tests
 {

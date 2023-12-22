@@ -1,4 +1,4 @@
-﻿using RecipeManager;
+﻿using RecipeManagerLogic;
 
 namespace ListOfRecipes
 {
