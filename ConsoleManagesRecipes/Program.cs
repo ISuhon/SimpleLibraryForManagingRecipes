@@ -2,17 +2,9 @@
 
 var recipeManager = new RecipeManager();
 
-// Adding recipes
-try
-{
-    recipeManager.AddRecipe(new Recipe("Pasta Carbonara", "Giulia", CuisineType.Italian));
-    recipeManager.AddRecipe(new Recipe("Tacos", "Maria", CuisineType.Mexican));
-    recipeManager.AddRecipe(new Recipe("Sushi Rolls", "Kenji", CuisineType.Asian));
-}
-catch (ArgumentException ex)
-{
-    Console.WriteLine($"Error adding recipe: {ex.Message}");
-}
+recipeManager.AddRecipe(new Recipe("Pasta Carbonara", "Giulia", CuisineType.Italian));
+recipeManager.AddRecipe(new Recipe("Tacos", "Maria", CuisineType.Mexican));
+recipeManager.AddRecipe(new Recipe("Sushi Rolls", "Kenji", CuisineType.Asian));
 
 // Displaying recipes
 Console.WriteLine("\nList of Recipes:");
