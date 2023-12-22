@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListOfRecipes", "ListOfReci
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListOfRecipes.Tests", "ListOfRecipes.Tests\ListOfRecipes.Tests.csproj", "{38BCF5E6-72F3-46AC-A2B3-3914A4262FC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleManagesRecipes", "ConsoleManagesRecipes\ConsoleManagesRecipes.csproj", "{A236E10E-283C-46C4-AF0B-20927DA94CA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleManagesRecipes", "ConsoleManagesRecipes\ConsoleManagesRecipes.csproj", "{A236E10E-283C-46C4-AF0B-20927DA94CA7}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{CE4AB593-29B2-4886-B1F0-993A7BDA7E59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{A236E10E-283C-46C4-AF0B-20927DA94CA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A236E10E-283C-46C4-AF0B-20927DA94CA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A236E10E-283C-46C4-AF0B-20927DA94CA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE4AB593-29B2-4886-B1F0-993A7BDA7E59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE4AB593-29B2-4886-B1F0-993A7BDA7E59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE4AB593-29B2-4886-B1F0-993A7BDA7E59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE4AB593-29B2-4886-B1F0-993A7BDA7E59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
