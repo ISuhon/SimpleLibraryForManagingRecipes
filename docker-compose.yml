@@ -5,4 +5,4 @@ services:
     image: ${DOCKER_REGISTRY-}consolemanagesrecipes
     build:
       context: .
-      dockerfile: ConsoleManagesRecipes/Dockerfile
+      dockerfile: Console/ConsoleManagesRecipes/Dockerfile
