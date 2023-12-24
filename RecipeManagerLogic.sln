@@ -3,19 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecipeManager", "RecipeManager\RecipeManager.csproj", "{608F8496-41A0-4D4A-B5C1-593F52E355C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecipeManager", "Library\RecipeManager\RecipeManager.csproj", "{608F8496-41A0-4D4A-B5C1-593F52E355C7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecipeManager.Tests", "RecipeManager.Tests\RecipeManager.Tests.csproj", "{E3EBB215-1948-48DC-8D99-B9EA1F165CAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecipeManager.Tests", "Library\RecipeManager.Tests\RecipeManager.Tests.csproj", "{E3EBB215-1948-48DC-8D99-B9EA1F165CAF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListOfFavorites.Tests", "TestProject1\ListOfFavorites.Tests.csproj", "{D10BB321-9A96-4739-BDCE-C92A6085CA93}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListOfFavorites.Tests", "Library\TestProject1\ListOfFavorites.Tests.csproj", "{D10BB321-9A96-4739-BDCE-C92A6085CA93}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListOfRecipes", "ListOfRecipes\ListOfRecipes.csproj", "{F49F229B-498E-4E60-9DA0-60F64BB9D725}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListOfRecipes", "Library\ListOfRecipes\ListOfRecipes.csproj", "{F49F229B-498E-4E60-9DA0-60F64BB9D725}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListOfRecipes.Tests", "ListOfRecipes.Tests\ListOfRecipes.Tests.csproj", "{38BCF5E6-72F3-46AC-A2B3-3914A4262FC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListOfRecipes.Tests", "Library\ListOfRecipes.Tests\ListOfRecipes.Tests.csproj", "{38BCF5E6-72F3-46AC-A2B3-3914A4262FC8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleManagesRecipes", "ConsoleManagesRecipes\ConsoleManagesRecipes.csproj", "{A236E10E-283C-46C4-AF0B-20927DA94CA7}"
-EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{CE4AB593-29B2-4886-B1F0-993A7BDA7E59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleManagesRecipes", "Console\ConsoleManagesRecipes\ConsoleManagesRecipes.csproj", "{A236E10E-283C-46C4-AF0B-20927DA94CA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

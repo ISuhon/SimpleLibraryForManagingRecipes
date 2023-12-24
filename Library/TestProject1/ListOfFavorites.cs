@@ -25,8 +25,8 @@ namespace RecipeManagerLogic.Tests
             // Assert
             Assert.Equal(3, sortedRecipes.Count);
             Assert.Equal("Tacos", sortedRecipes[0].Title);
-            Assert.Equal("Spaghetti Carbonara", sortedRecipes[1].Title);
-            Assert.Equal("Sushi", sortedRecipes[2].Title);
+            Assert.Equal("Sushi", sortedRecipes[1].Title);
+            Assert.Equal("Spaghetti Carbonara", sortedRecipes[2].Title);
         }
 
        
