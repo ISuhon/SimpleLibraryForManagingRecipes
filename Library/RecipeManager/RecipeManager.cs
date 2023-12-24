@@ -7,8 +7,10 @@ namespace RecipeManagerLogic
     public class RecipeManager
     {
         private readonly List<Recipe> _recipes = new List<Recipe>();
+        private readonly List<Recipe> _favoriteRecipes = new List<Recipe>(); // New favorites list
 
         public List<Recipe> Recipes => _recipes;
+        public List<Recipe> FavoriteRecipes => _favoriteRecipes;
 
         public void AddRecipe(Recipe recipe)
         {
@@ -28,6 +30,12 @@ namespace RecipeManagerLogic
             }
 
             _recipes.Remove(recipe);
+
+            // Remove from favorites as well if exists there
+            if (_favoriteRecipes.Contains(recipe))
+            {
+                _favoriteRecipes.Remove(recipe);
+            }
         }
         public List<Recipe> GetFavoritesSortedByTitleDescending()
         {
@@ -36,8 +44,26 @@ namespace RecipeManagerLogic
                 .ToList();
         }
 
+        // New method to add a recipe to favorites
+        public void AddToFavorites(Recipe recipe)
+        {
+            if (_favoriteRecipes.Contains(recipe))
+            {
+                throw new ArgumentException("Recipe is already in favorites.");
+            }
 
+            _favoriteRecipes.Add(recipe);
+        }
+
+        // New method to remove a recipe from favorites
+        public void RemoveFromFavorites(Recipe recipe)
+        {
+            if (!_favoriteRecipes.Contains(recipe))
+            {
+                throw new ArgumentException("Recipe is not in favorites.");
+            }
+
+            _favoriteRecipes.Remove(recipe);
+        }
     }
 }
-    
-
