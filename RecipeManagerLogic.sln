@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleManagesRecipes", "Co
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{1ADA0403-CF9A-49BD-8122-9A8BBB0D688C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddAndRemoveFromFavorite.Tests", "..\AddAndRemoveFromFavorite.Tests\AddAndRemoveFromFavorite.Tests.csproj", "{B06CD10E-D07B-4951-96C6-47892F6660E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddAndRemoveFromFavorite.Tests", "Library\AddAndRemoveFromFavorite.Tests\AddAndRemoveFromFavorite.Tests.csproj", "{B06CD10E-D07B-4951-96C6-47892F6660E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
