@@ -23,8 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SimpleLibraryForManagingRecipes\Library\ListOfRecipes\ListOfRecipes.csproj" />
-    <ProjectReference Include="..\SimpleLibraryForManagingRecipes\Library\RecipeManager\RecipeManager.csproj" />
+    <ProjectReference Include="..\RecipeManager\RecipeManager.csproj" />
   </ItemGroup>
 
 </Project>

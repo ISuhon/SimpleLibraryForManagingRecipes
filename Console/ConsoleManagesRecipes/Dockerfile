@@ -6,11 +6,12 @@ WORKDIR /app
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["ConsoleManagesRecipes/ConsoleManagesRecipes.csproj", "ConsoleManagesRecipes/"]
-COPY ["RecipeManager/RecipeManager.csproj", "RecipeManager/"]
-RUN dotnet restore "./ConsoleManagesRecipes/./ConsoleManagesRecipes.csproj"
+COPY ["Console/ConsoleManagesRecipes/ConsoleManagesRecipes.csproj", "Console/ConsoleManagesRecipes/"]
+COPY ["Library/ListOfRecipes/ListOfRecipes.csproj", "Library/ListOfRecipes/"]
+COPY ["Library/RecipeManager/RecipeManager.csproj", "Library/RecipeManager/"]
+RUN dotnet restore "./Console/ConsoleManagesRecipes/./ConsoleManagesRecipes.csproj"
 COPY . .
-WORKDIR "/src/ConsoleManagesRecipes"
+WORKDIR "/src/Console/ConsoleManagesRecipes"
 RUN dotnet build "./ConsoleManagesRecipes.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish

@@ -4,7 +4,7 @@
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
     <DockerPublishLocally>False</DockerPublishLocally>
-    <ProjectGuid>1ada0403-cf9a-49bd-8122-9a8bbb0d688c</ProjectGuid>
+    <ProjectGuid>a2d4b8ad-302b-4c8f-b6d8-32766516e9cc</ProjectGuid>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">
