@@ -41,7 +41,7 @@ namespace RecipeManagerLogic
         }
         public List<Recipe> GetFavoritesSortedByTitleDescending()
         {
-            return _recipes
+            return _favoriteRecipes
                 .OrderByDescending(recipe => recipe.Title)
                 .ToList();
         }

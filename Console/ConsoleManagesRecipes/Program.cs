@@ -160,3 +160,32 @@ foreach (var cuisine in recipeManager.Cuisines)
 {
     Console.WriteLine(cuisine);
 }
+
+
+Console.WriteLine("----------------------------------------");
+Console.WriteLine("Honcharuk:");
+
+// Adding new recipes
+recipeManager.AddRecipe(new Recipe("Chicken Alfredo", "Emily", CuisineType.Italian));
+recipeManager.AddRecipe(new Recipe("Beef Tacos", "Juan", CuisineType.Mexican));
+recipeManager.AddRecipe(new Recipe("Sashimi", "Akihiro", CuisineType.Japanese));
+
+// Adding the new recipes to favorites
+foreach (var recipe in recipeManager.Recipes)
+{
+    recipeManager.AddToFavorites(recipe);
+}
+
+Console.WriteLine("\nList of Favorite Recipes:");
+foreach (var recipe in recipeManager.FavoriteRecipes)
+{
+    Console.WriteLine($"Title: {recipe.Title} | Chef: {recipe.Chef} | Cuisine: {recipe.CuisineType}");
+}
+
+
+// Displaying favorite recipes sorted by title in descending order
+Console.WriteLine("\nList of Favorite Recipes (Sorted by Title in Descending Order):");
+foreach (var recipe in recipeManager.GetFavoritesSortedByTitleDescending())
+{
+    Console.WriteLine($"Title: {recipe.Title} | Chef: {recipe.Chef} | Cuisine: {recipe.CuisineType}");
+}
