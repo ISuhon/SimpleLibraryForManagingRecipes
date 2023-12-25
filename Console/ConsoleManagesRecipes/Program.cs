@@ -104,7 +104,7 @@ manager.AddRecipe(new Recipe("Bò Lúc Lắc", "Charles Pham", CuisineType.Asian
 Console.WriteLine("List of recipes:");
 foreach (var recipe in manager.Recipes)
 {
-    Console.WriteLine(recipe);
+    Console.WriteLine($"Title: {recipe.Title} | Chef: {recipe.Chef} | Cuisine: {recipe.CuisineType}");
 }
 
 // Removing recipe
@@ -131,7 +131,7 @@ catch (ArgumentException ex)
 Console.WriteLine("List after removing one recipe:");
 foreach (var recipe in manager.Recipes)
 {
-    Console.WriteLine(recipe);
+    Console.WriteLine($"Title: {recipe.Title} | Chef: {recipe.Chef} | Cuisine: {recipe.CuisineType}");
 }
 
 // Adding recipe to favorites
