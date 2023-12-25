@@ -1,5 +1,8 @@
 ﻿using RecipeManagerLogic;
+using ListOfRecipes;
+using System.Linq;
 
+Console.WriteLine("Knyha: ");
 var recipeManager = new RecipeManager();
 
 recipeManager.AddRecipe(new Recipe("Pasta Carbonara", "Giulia", CuisineType.Italian));
@@ -39,7 +42,8 @@ foreach (var recipe in recipeManager.Recipes)
     Console.WriteLine($"Title: {recipe.Title} | Chef: {recipe.Chef} | Cuisine: {recipe.CuisineType}");
 }
 
-Console.WriteLine("-----------");
+Console.WriteLine("----------------------------------------");
+Console.WriteLine("Naumenko:");
 
 // Adding a recipe to favorites
 try
@@ -86,6 +90,33 @@ catch (ArgumentException ex)
 
 Console.WriteLine("\nList of Favorite Recipes:");
 foreach (var recipe in recipeManager.FavoriteRecipes)
+{
+    Console.WriteLine($"Title: {recipe.Title} | Chef: {recipe.Chef} | Cuisine: {recipe.CuisineType}");
+}
+
+Console.WriteLine("----------------------------------------");
+Console.WriteLine("Suhonosenko:");
+
+RecipeManager manager = new RecipeManager();
+
+// Adding recipes
+manager.AddRecipe(new Recipe("Huevos rancheros", "Unknown", CuisineType.Mexican));
+manager.AddRecipe(new Recipe("Bò Lúc Lắc", "Charles Pham", CuisineType.Asian));
+manager.AddRecipe(new Recipe("Spaghetti puttanesca", "Sandro Petti", CuisineType.Italian));
+
+
+
+// Printing recipes
+Console.WriteLine("List of recipes:");
+foreach (var recipe in manager.Recipes)
+{
+    Console.WriteLine($"Title: {recipe.Title} | Chef: {recipe.Chef} | Cuisine: {recipe.CuisineType}");
+}
+
+var listOfRecipes = new ListOfRecipes<Recipe>(manager.Recipes);
+
+Console.WriteLine("Printing recipes sorted in descending order:");
+foreach (Recipe recipe in listOfRecipes.GetSortedList())
 {
     Console.WriteLine($"Title: {recipe.Title} | Chef: {recipe.Chef} | Cuisine: {recipe.CuisineType}");
 }
