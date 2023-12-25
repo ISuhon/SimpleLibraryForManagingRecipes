@@ -8,9 +8,11 @@ namespace RecipeManagerLogic
     {
         private readonly List<Recipe> _recipes = new List<Recipe>();
         private readonly List<Recipe> _favoriteRecipes = new List<Recipe>(); // New favorites list
+        private readonly List<CuisineType> _cuisines = Enum.GetValues(typeof(CuisineType)).Cast<CuisineType>().ToList();
 
         public List<Recipe> Recipes => _recipes;
         public List<Recipe> FavoriteRecipes => _favoriteRecipes;
+        public List<CuisineType> Cuisines => _cuisines;
 
         public void AddRecipe(Recipe recipe)
         {
@@ -65,5 +67,29 @@ namespace RecipeManagerLogic
 
             _favoriteRecipes.Remove(recipe);
         }
+
+        // Method to add a new cuisine
+        public void AddCuisine(CuisineType newCuisine)
+        {
+            if (_cuisines.Contains(newCuisine))
+            {
+                throw new ArgumentException("Cuisine already exists.");
+            }
+
+            _cuisines.Add(newCuisine);
+        }
+
+        // Method to remove a cuisine
+        public void RemoveCuisine(CuisineType cuisineToRemove)
+        {
+            if (!_cuisines.Contains(cuisineToRemove))
+            {
+                throw new ArgumentException("Cuisine not found.");
+            }
+
+            _cuisines.Remove(cuisineToRemove);
+        }
+
+
     }
 }
