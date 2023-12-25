@@ -120,3 +120,43 @@ foreach (Recipe recipe in listOfRecipes.GetSortedList())
 {
     Console.WriteLine($"Title: {recipe.Title} | Chef: {recipe.Chef} | Cuisine: {recipe.CuisineType}");
 }
+
+Console.WriteLine("----------------------------------------");
+Console.WriteLine("Berdnychenko:");
+// Adding a new cuisine
+try
+{
+    recipeManager.AddCuisine(CuisineType.French);
+    Console.WriteLine("French cuisine added.");
+}
+catch (ArgumentException ex)
+{
+    Console.WriteLine($"Error adding cuisine: {ex.Message}");
+}
+
+// Displaying cuisines
+
+Console.WriteLine("\nList of Cuisines:");
+foreach (var cuisine in recipeManager.Cuisines)
+{
+    Console.WriteLine(cuisine);
+}
+
+// Removing a cuisine
+try
+{
+    recipeManager.RemoveCuisine(CuisineType.American);
+    Console.WriteLine("American cuisine removed.");
+}
+catch (ArgumentException ex)
+{
+    Console.WriteLine($"Error removing cuisine: {ex.Message}");
+}
+
+// Displaying cuisines
+
+Console.WriteLine("\nList of Cuisines:");
+foreach (var cuisine in recipeManager.Cuisines)
+{
+    Console.WriteLine(cuisine);
+}
