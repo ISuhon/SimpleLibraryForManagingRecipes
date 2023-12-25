@@ -6,6 +6,9 @@
         Italian,
         Mexican,
         Asian,
-        American
+        American,
+        French, // Adding new cuisines here
+        Japanese,
+        // Add more cuisines as needed
     }
 }
